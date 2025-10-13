@@ -59,16 +59,7 @@ public class CarLot
     /// <exception cref="System.ArgumentNullException"></exception>
     public Car? FindCarByMakeModel(string make, string model)
     {
-        const string msg = "make and Model cannot be null";
-
-        if (string.IsNullOrEmpty(make) || string.IsNullOrEmpty(model))
-            throw new ArgumentNullException(msg);
-
-        var matchedCar = Inventory.FirstOrDefault(car =>
-            car.Make.Equals(make, StringComparison.OrdinalIgnoreCase) &&
-            car.Model.Equals(model, StringComparison.OrdinalIgnoreCase));
-
-        return matchedCar;
+        return Inventory.FirstOrDefault(car => car.Make.Equals(make, StringComparison.OrdinalIgnoreCase) && car.Model.Equals(model, StringComparison.OrdinalIgnoreCase));
     }
 
     /// <summary>
@@ -84,6 +75,7 @@ public class CarLot
             c.Model.Equals(model, StringComparison.OrdinalIgnoreCase));
 
         if (purchasedCar == null) return null;
+
         Inventory.Remove(purchasedCar);
         return purchasedCar;
     }
