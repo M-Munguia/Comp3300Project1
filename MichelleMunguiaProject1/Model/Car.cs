@@ -21,7 +21,7 @@
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("First Name cannot be null");
+                    throw new ArgumentException("Make cannot be null");
                 _make = value.Trim();
             }
         }
@@ -32,7 +32,7 @@
             set
             {
                 if (string.IsNullOrEmpty(value))
-                    throw new ArgumentException("First Name cannot be null");
+                    throw new ArgumentException("Model cannot be null");
                 _model = value.Trim();
             }
         }
