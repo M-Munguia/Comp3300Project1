@@ -24,6 +24,12 @@ public class CarLot
     /// </value>
     public int Count => Inventory.Count;
 
+    /// <summary>
+    /// Gets the inventory.
+    /// </summary>
+    /// <value>
+    /// The inventory.
+    /// </value>
     public List<Car> Inventory { get; }
 
     /// <summary>
